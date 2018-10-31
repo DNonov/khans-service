@@ -14,6 +14,10 @@ const transporter = nodemailer.createTransport({
   }
 });
 
+app.get("/", (req, res) => {
+  res.status(200).json({"status": "stable"})
+});
+
 app.get("/:email", (req, res) => {
   const { email } = req.params;
   const mailOptions = {
